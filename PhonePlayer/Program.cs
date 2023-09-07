@@ -57,22 +57,25 @@ namespace PhonePlayer
             Console.WriteLine("---------------------------------------------------------------------------------");
             while(true)
             {
-                Console.WriteLine("Inserisci azione desiderata  : Stop , Next , Previous , Exit ");
+                Console.ResetColor();
+                Console.WriteLine("Inserisci azione desiderata  : S per Stoppare , N per Next ,P per  Previous , E per Exit ");
                 string actionselect = Console.ReadLine().ToLower();
+
                 switch (actionselect)
                 {
-                    case "stop":
+
+                    case "s":
                         player.Stop();
                         Console.WriteLine("---------------------------------------------------------------------------------");
                         break;
-                    case "next":
+                    case "n":
                       player.Next();
                         Console.WriteLine("---------------------------------------------------------------------------------"); break;
 
-                    case "previous": 
+                    case "p": 
                         player.Previous();
                         Console.WriteLine("---------------------------------------------------------------------------------"); break;
-                    case "exit":
+                    case "e":
                         Environment.Exit(0);
                         break;
                     default: Console.WriteLine("Azione Non Riconosciuta ");

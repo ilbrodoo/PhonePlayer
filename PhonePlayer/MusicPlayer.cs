@@ -11,17 +11,16 @@ namespace PhonePlayer
     {
         Player Player = new Player();
         public string autor;
-        public MusicPlayer(string titolo , string autore)  : base(titolo )
+        public MusicPlayer(string titolo, string autore) : base(titolo)
         {
             this.autor = autore;
-       
-            
+
+
         }
-         public override void Print()
+        public override void Print()
         {
-            
-                Console.WriteLine($"Titolo {base.title} - Regista {autor}");
-            
+          
+            Console.WriteLine($"Titolo {base.title} - Regista {autor}");
         }
     }
 }

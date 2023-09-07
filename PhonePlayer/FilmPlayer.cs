@@ -18,9 +18,9 @@ namespace PhonePlayer
         }
         public override void Print()
         {
-            
+               
                 Console.WriteLine($" Titolo {base.title} - Regista {Regista}");
-            
+           
         }
     }
 }

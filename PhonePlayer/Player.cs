@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,13 +19,13 @@ namespace PhonePlayer
 
         public void  Play(int i)
         {
-                
-                currentMedia = PlayList[i - 1];
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            currentMedia = PlayList[i - 1];
                 this.i = i - 1;
                 string titolo = currentMedia.title;
 
                 Console.WriteLine("Riproduzione di: " + titolo);
-                
+                Console.ResetColor();
         }
 
 
@@ -68,7 +69,11 @@ namespace PhonePlayer
 
             if (currentMedia != null)
             {
+                this.currentMedia = PlayList[i];
+                
                 string titolo = currentMedia.title;
+                
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Stop di: " + titolo);
                 // Esegui qui le operazioni di stop specifiche.
                 currentMedia = null; // Resetta l'elemento corrente dopo la stop.
@@ -80,14 +85,17 @@ namespace PhonePlayer
         }
         public  void Next() 
         {
-            this.i = i +1;
-            if (i >= 1 && i < PlayList.Count)
+            Console.ForegroundColor = ConsoleColor.Green;
+            this.i = i + 1;
+            if (i >= 0 && i < PlayList.Count)
             {
                 this.currentMedia = PlayList[i];
                 
                 string titolo = currentMedia.title;
-                
+               
                 Console.WriteLine("Riproduzione  di: " + titolo);
+                
+                
                 // Esegui qui le operazioni di stop specifiche.
                 currentMedia = null;
             }
@@ -96,6 +104,7 @@ namespace PhonePlayer
 
 
                 currentMedia = PlayList.First();
+                this.i = 0;
                 string titolo = currentMedia.title;
 
                 Console.WriteLine("Riproduzione  di: " + titolo);
@@ -104,8 +113,9 @@ namespace PhonePlayer
         }
         public  void Previous()
         {
+            Console.ForegroundColor = ConsoleColor.Blue;
             this.i = i - 1;
-            if (i >= 1 && i < PlayList.Count)
+            if (i >= 0 && i < PlayList.Count)
             {
                 this.currentMedia = PlayList[i];
 
@@ -120,6 +130,7 @@ namespace PhonePlayer
 
 
                 currentMedia = PlayList.Last();
+                this.i = 2;
                 string titolo = currentMedia.title;
 
                 Console.WriteLine("Riproduzione  di: " + titolo);
