@@ -20,7 +20,7 @@ namespace PhonePlayer
         public override void Print()
         {
           
-            Console.WriteLine($"Titolo {base.title} - Regista {autor}");
+            Console.WriteLine($"Titolo {base.title} - Autore {autor}");
         }
     }
 }
